@@ -6,41 +6,52 @@
 
 using namespace std;
 
+// Deque<int, int ,int> fr1;
+
 // Constructors
-Deque::Deque(){
-    int len;
-    cout << "Enter the lenght of the Deque: " << endl;
-    cin >> len;
-    deque = new int[len];
+// Deque::Deque(){
+//     cout << "Creating Deque..." << endl;
+//     this->head = NULL;
+//     this->tail = NULL;
+// }
 
-    // Initialize
-    for (int i = 0; i < len; i++)
-    {
-        cout << "Enter the "<< i+1 << " element: " << endl;
-        cin >> deque[i];
+// Deque::Deque(const int item){
+//     cout << "Creating Deque with first element..." << endl;
+//     Node *node = new Node[sizeof(Node)];
+//     node->item = item;
+    
+//     this->length++;
 
-    }
-    cout << "Creating Deque..." << endl;
-}
+// }
+
 
 Deque::~Deque(){
     cout << "Deque Deleted" << endl;
-    if (deque != NULL){
-        delete [] deque;
-
-    }
+    
 }
 
-// Methods
+// // Methods
 // void Deque::printdd(){
+
+//     Node *temp = head;
 //     // Print
-//     for (int i = 0; i < len; i++)
-//     {
-//         cout << deque[i] << ", ";
+//     while (temp != NULL){
+//         cout << temp->item << " ";
+//         temp = temp->next;
 //     }
 //     cout << endl;
+//     return ;
+//     // for (int i = 0; i < this->length; i++)
+//     // {
+//     //     cout << this->tail.item << ", ";
+//     // }
+//     cout << endl;
 // }
-
+// bool Deque::isEmpty(){
+//     if (head == NULL)
+//         return true;
+//     return false;
+// }
 // ostream& operator<< (ostream& os, const Deque& dq){
 //         for (int i = 0; i < len; i++) {
 //                 os << array[i] << ", ";

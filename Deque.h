@@ -2,17 +2,24 @@
 #define DEQUE_H
 
 using namespace std;
-#include <new>
+// #include <new>
 
+struct Node{
+    int item;
+    Node *prev; 
+    Node *next; 
+};
+template <typename T > //class Deque;
 class Deque{
 
 private:
-    int len;
-    char *que;
+    int length = 0 ;
+    Node *tail;
+    Node *head;
 
 public:
     // Constructors
-    Deque(const char *);
+    Deque();
     // Deque(int);
     // Deque(float);
     // Deque(double);
@@ -21,18 +28,19 @@ public:
     // Destructor
     ~Deque();
 
-    friend ostream& operator<<(ostream& os, const Deque& dq);
+    // friend ostream& operator<<(ostream& os, const Deque& dq);
 
  
 
     // ====== Methods ======
+    bool isEmpty();
     void appendLeft();
     void appendRight();
     
     void removeLeft();
     void removeRight();
-
-    void len();
+    void printdd();
+    // void len();
 
 };
 

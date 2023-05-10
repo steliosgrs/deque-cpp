@@ -3,53 +3,41 @@
 #include <new>
 #include <string>
 
-#include "Deque.h"
+// #include "Deque.h"
 
 using namespace std;
 
-string item;
+template<typename T, int length>
+class Deque
+{
+private:
+    T array[length];
+public:
+    // Deque();
+    // ~Deque();
+    // ====== Methods ======
+    void init(){
+        cout << "Initilazing" << endl;
+    }
+    bool isEmpty();
+    void appendLeft();
+    void appendRight();
+    
+    void removeLeft();
+    void removeRight();
+    void printdd();
+};
+
+
+
+
 int main(int argc, char const *argv[])
 {
-    cout << "Enter a list of items (int, float, double, etc) :" << endl;
-    cout << " ! MUST BE THE SAME TYPE ! " << endl;
-    cout << "For exit insert \"00\"" << endl;
-
-    // cin >> item;
-    // int count = 0;
-
-    // int len;
-    // cout << "Enter the lenght of the Deque: " << endl;
-    // cin >> len;
-    // int *deque;
-
-    // deque = new int[len];
-
-    // // Initialize
-    // for (int i = 0; i < len; i++)
-    // {
-    //     cout << "Enter the "<< i+1 << " element: " << endl;
-    //     cin >> deque[i];
-
-    // }
-
-    // // Print
-    // for (int i = 0; i < len; i++)
-    // {
-    //     cout << deque[i] << ", ";
-    // }
-    // cout << endl;
-
-    
-    // while (item != "_0"){
-    //     cin >> item;
-    //     count+=1;
-    // }
-
-    // if (count != 0){
-    //     Deque d(count);
-    // }
-
-    Deque d();
+    Deque<int,3> d1;
+    d1.init();
+    // Deque d(5);
+    // d.printdd();
+    // cout << c.isEmpty();
     // delete[] deque;
 
     return 0;
