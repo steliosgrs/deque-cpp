@@ -11,10 +11,12 @@ template<typename T, int length>
 class Deque
 {
 private:
-    T array[length];
+    // T array[length];
 public:
-    // Deque();
-    // ~Deque();
+    Deque();
+    Deque(T que);
+    Deque(T que, int length);
+    ~Deque();
     // ====== Methods ======
     void init(){
         cout << "Initilazing" << endl;
@@ -30,10 +32,10 @@ public:
 
 
 
-
 int main(int argc, char const *argv[])
 {
-    Deque<int,3> d1;
+    Deque<T>::Deque();
+    Deque<int,3> d1;git
     d1.init();
     // Deque d(5);
     // d.printdd();
