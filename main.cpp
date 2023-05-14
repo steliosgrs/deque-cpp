@@ -7,40 +7,67 @@
 
 using namespace std;
 
-template<typename T, int length>
+template<class T>
 class Deque
 {
 private:
-    // T array[length];
+    T *items;
+    unsigned int size;
+
 public:
-    Deque();
-    Deque(T que);
-    Deque(T que, int length);
+    Deque(const int& = 0);
     ~Deque();
+
     // ====== Methods ======
-    void init(){
-        cout << "Initilazing" << endl;
-    }
+
     bool isEmpty();
-    void appendLeft();
-    void appendRight();
+    void appendL(const T&);
+    void appendR(const T&);
     
-    void removeLeft();
-    void removeRight();
+    void popL();
+    void popR();
     void printdd();
 };
 
+template<class T>
+Deque<T>::Deque(const int& s){
+    items = new T[s];
+    size = s;
+}
 
+template<class T>
+Deque<T>::~Deque(){
+    delete [] items;
+}
+
+template<class T>
+void Deque<T>::appendR(const T& new_item){
+    items[++size] = new_item;
+}
+
+// template<class T>
+// void Deque<T>::appendL(const T& new_item){
+//     size
+//     items[++size] = new_item;
+// }
+
+// template<class T>
+// void Deque<T>::popR(){
+//     // Empty();
+//     items[++size] = new_item;
+// }
+// template<class T>
+// void Deque<T>::popL(){
+//     // Empty();
+//     items[++size] = new_item;
+// }
 
 int main(int argc, char const *argv[])
 {
-    Deque<T>::Deque();
-    Deque<int,3> d1;git
-    d1.init();
-    // Deque d(5);
-    // d.printdd();
-    // cout << c.isEmpty();
-    // delete[] deque;
-
+    Deque<int> deque;
+    deque.appendL(2);
+    deque.appendR(3);
+    deque.popL();
+    deque.popR();
     return 0;
 }
